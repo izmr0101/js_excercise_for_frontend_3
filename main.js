@@ -30,11 +30,12 @@ for (let index = 1; index <= numberOfLi; index++) {
  *     - https://developer.mozilla.org/ja/docs/Web/API/ParentNode/children
  */
 
-const ulElementArray = ulElement.children;
 
-const deleteElement = ulElementArray[3];
+const deleteElement = ulElement.children[3];
 
-deleteElement.parentNode.removeChild(deleteElement);
+ulElement.removeChild(deleteElement);
+
+// deleteElement.parentNode.removeChild(deleteElement);
 
 
 /**
