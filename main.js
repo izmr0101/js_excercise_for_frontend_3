@@ -16,6 +16,13 @@ mainDivElement.appendChild(ulElement);
  *     5. アイテム5
  */
 
+const numberOfLi = 5;
+
+for (let index = 1; index <= numberOfLi; index++) {
+    const liElement = document.createElement('li');
+    liElement.textContent = index + '. アイテム' + index;
+    ulElement.appendChild(liElement);
+};
 
 /**
  * 課題3: 課題2で作成した5つのli要素の内、先頭から4番目(アイテム4)の要素を削除する
@@ -24,8 +31,21 @@ mainDivElement.appendChild(ulElement);
  */
 
 
+const deleteElement = ulElement.children[3];
+
+ulElement.removeChild(deleteElement);
+
+// deleteElement.parentNode.removeChild(deleteElement);
+
+
 /**
  * 課題4: id属性値が `remove-all-items` のul要素内の全てのli要素を削除する
  *   - ul要素は削除しないこと
  */
 
+
+const parentElement = document.getElementById('remove-all-items');
+
+while (parentElement.firstChild) {
+    parentElement.removeChild(parentElement.firstChild);
+}
